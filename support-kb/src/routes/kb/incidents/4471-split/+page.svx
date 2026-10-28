@@ -22,18 +22,18 @@ reaches the first.
 Not one issue. The queued parser fix leaves the form hint open.
 </Callout>
 
-## What #4471 holds
+## What #4471 held
 
-<CauseTable ticket={4471} />
+Each report is now merged into the ticket for its cause, so each table below is the desk's own cause
+table for that ticket.
 
-## One ticket per problem
+### [#6](https://github.com/CamiloGaete/support-kb-4471/issues/6): the shared parser
 
-| problem | what goes wrong | reports | ticket |
-| --- | --- | --- | --- |
-| `parser` | The shared parser reads a day-first date month first: day and month swap. | the `parser` row, its one-day footnote included | [#6](https://github.com/CamiloGaete/support-kb-4471/issues/6) |
-| `hint` | booking-v3's form prints `MM/DD/YYYY` under its date field; people type month first and the form reads it day first. | the `hint` row | [#2](https://github.com/CamiloGaete/support-kb-4471/issues/2) |
+<CauseTable ticket={6} />
 
-Each report is in exactly one ticket, counted the way the cause table counts it. Each ticket lists its report ids and its count.
+### [#2](https://github.com/CamiloGaete/support-kb-4471/issues/2): the booking-v3 form hint
+
+<CauseTable ticket={2} />
 
 ## How each report was placed
 
