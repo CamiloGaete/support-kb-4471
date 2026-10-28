@@ -38,8 +38,8 @@
       "browserLocale": "nl-NL",
       "intakeTag": "parser"
     },
-    "mergedInto": 4,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T09:06:00+02:00"
   },
   {
     "id": "R-41203",
@@ -122,8 +122,8 @@
       "browserLocale": "de-DE",
       "intakeTag": "parser"
     },
-    "mergedInto": 4,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T09:19:00+02:00"
   },
   {
     "id": "R-41210",
@@ -402,8 +402,8 @@
       "browserLocale": "en-GB",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T09:56:00+02:00"
   },
   {
     "id": "R-41231",
@@ -486,8 +486,8 @@
       "browserLocale": "pl-PL",
       "intakeTag": "parser"
     },
-    "mergedInto": 4,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:08:00+02:00"
   },
   {
     "id": "R-41237",
@@ -556,8 +556,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:15:00+02:00"
   },
   {
     "id": "R-41242",
@@ -696,8 +696,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:30:00+02:00"
   },
   {
     "id": "R-41251",
@@ -710,8 +710,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:30:00+02:00"
   },
   {
     "id": "R-41252",
@@ -822,8 +822,8 @@
       "browserLocale": "es-ES",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:45:00+02:00"
   },
   {
     "id": "R-41260",
@@ -864,8 +864,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T10:52:00+02:00"
   },
   {
     "id": "R-41263",
@@ -1046,8 +1046,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T11:18:00+02:00"
   },
   {
     "id": "R-41276",
@@ -1312,8 +1312,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T11:58:00+02:00"
   },
   {
     "id": "R-41295",
@@ -1494,8 +1494,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T12:19:00+02:00"
   },
   {
     "id": "R-41306",
@@ -1522,8 +1522,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T12:25:00+02:00"
   },
   {
     "id": "R-41309",
@@ -2012,8 +2012,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 4,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T13:35:00+02:00"
   },
   {
     "id": "R-41345",
@@ -2348,8 +2348,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T14:22:00+02:00"
   },
   {
     "id": "R-41367",
@@ -2432,8 +2432,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T14:35:00+02:00"
   },
   {
     "id": "R-41373",
@@ -2600,8 +2600,8 @@
       "browserLocale": "es-ES",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T14:56:00+02:00"
   },
   {
     "id": "R-41385",
@@ -2642,8 +2642,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-02T15:01:00+02:00"
   },
   {
     "id": "R-41388",
@@ -2768,8 +2768,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-07T23:59:00+02:00"
   },
   {
     "id": "R-41397",
@@ -2824,8 +2824,8 @@
       "browserLocale": "es-ES",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-09T19:04:00+02:00"
   },
   {
     "id": "R-41401",
@@ -2936,8 +2936,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-11T20:34:00+02:00"
   },
   {
     "id": "R-41408",
@@ -3048,8 +3048,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-14T12:44:00+02:00"
   },
   {
     "id": "R-41416",
@@ -3062,8 +3062,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-14T14:01:00+02:00"
   },
   {
     "id": "R-41417",
@@ -3090,8 +3090,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-14T21:39:00+02:00"
   },
   {
     "id": "R-41419",
@@ -3216,8 +3216,8 @@
       "browserLocale": "es-ES",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-19T11:13:00+02:00"
   },
   {
     "id": "R-41429",
@@ -3370,8 +3370,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-22T15:38:00+02:00"
   },
   {
     "id": "R-41440",
@@ -3398,8 +3398,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-23T17:49:00+02:00"
   },
   {
     "id": "R-41442",
@@ -3510,8 +3510,8 @@
       "browserLocale": "de-DE",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-29T22:38:00+02:00"
   },
   {
     "id": "R-41450",
@@ -3566,8 +3566,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-30T19:05:00+02:00"
   },
   {
     "id": "R-41454",
@@ -3636,8 +3636,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-07-31T21:49:00+02:00"
   },
   {
     "id": "R-41457",
@@ -3692,8 +3692,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-08-01T15:09:00+02:00"
   },
   {
     "id": "R-41461",
@@ -3860,8 +3860,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-08-09T23:31:00+02:00"
   },
   {
     "id": "R-41473",
@@ -4042,8 +4042,8 @@
       "browserLocale": "de-DE",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-08-14T22:20:00+02:00"
   },
   {
     "id": "R-41486",
@@ -4154,8 +4154,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-08-19T17:16:00+02:00"
   },
   {
     "id": "R-41494",
@@ -4798,8 +4798,8 @@
       "browserLocale": "es-ES",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-09-04T19:44:00+02:00"
   },
   {
     "id": "R-41540",
@@ -5288,8 +5288,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-09-17T20:38:00+02:00"
   },
   {
     "id": "R-41573",
@@ -5428,8 +5428,8 @@
       "browserLocale": "pt-PT",
       "intakeTag": "parser"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-09-22T20:56:00+02:00"
   },
   {
     "id": "R-41583",
@@ -5456,8 +5456,8 @@
       "browserLocale": "en-US",
       "intakeTag": "hint"
     },
-    "mergedInto": 2,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-09-23T00:10:00+02:00"
   },
   {
     "id": "R-41585",
@@ -5974,7 +5974,7 @@
       "browserLocale": "cs-CZ",
       "intakeTag": "parser"
     },
-    "mergedInto": 4,
-    "mergedAt": "2026-10-28T18:10:00-03:00"
+    "mergedInto": 4471,
+    "mergedAt": "2026-10-04T21:58:00+02:00"
   }
 ]
