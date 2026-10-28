@@ -35,6 +35,15 @@ Not one issue. The queued parser fix leaves the form hint open.
 
 Each report is in exactly one ticket, counted the way the cause table counts it. Each ticket lists its report ids and its count.
 
+## How #4471 ended
+
+#4471 closed on 5 October. Each ticket here closed the same way as its cause:
+
+| cause | outcome | ticket |
+| --- | --- | --- |
+| `parser` | fixed: `fix(dates): parse dd/mm for eu locales` | [#8](https://github.com/CamiloGaete/support-kb-4471/issues/8), closed as completed |
+| `hint` | won't fix: booking-v3 form retired | [#2](https://github.com/CamiloGaete/support-kb-4471/issues/2), closed as not planned |
+
 ## How each report was placed
 
 1. One report per id. The ticket system exports in overlapping pages, so some reports come twice.
