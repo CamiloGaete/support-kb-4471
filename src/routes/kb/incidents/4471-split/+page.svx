@@ -1,0 +1,61 @@
+---
+layout: runbook
+title: '#4471 split: what the reports show'
+owner: Camilo Gaete
+status: open
+reviewed: 2026-10-28
+signature: 'v1.eyJzdWIiOiIzMDIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIxODI1NywiZXhwIjoxNzkzMzA0NjU3fQ.ib5O7nSz4A4s80pjVwiKF3khW6C-5l8RFRv_YjpKHjs'
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+
+  const REPO = 'https://github.com/CamiloGaete/support-kb-4471';
+</script>
+
+The [#4471 page](/kb/incidents/4471) says one issue, one fix queued. Its own cause table says
+otherwise. Read report by report, against each reporter's tenant, the ticket holds separate
+problems. Each one needs its own fix, and the parser fix queued for #4471 only reaches the first.
+
+<Callout kind="warn">
+Not one issue. The queued parser fix leaves the other problems below open.
+</Callout>
+
+## What the reports show
+
+<ProblemTable
+  ticket={4471}
+  issues={{ parser: `${REPO}/issues/1`, hint: `${REPO}/issues/2`, 'one-day': `${REPO}/issues/3` }}
+/>
+
+## How each report was placed
+
+1. One report per id. The ticket system exports in overlapping pages, so some reports come twice.
+2. The desk's one-day notes go first. A report that says the date moved by one day did not get a
+   flipped month, whatever its tenant.
+3. Every other report goes by its tenant and the way it came in, as
+   [`causes.ts`](https://github.com/CamiloGaete/support-kb-4471/blob/main/src/lib/kb/causes.ts) runs it: a form
+   report from a day-first tenant on booking-v3 is `hint`, the rest is `parser`.
+4. Intake's tag is not used. It is a guess from the reporter's browser, and the table shows how
+   often it names the other cause.
+
+Every body was read. Each report placed under `parser` or `hint` either swaps day and month, or
+gives no date to check against.
+
+## What changes for the desk
+
+- **parser** is what #4471 already describes, and its queued fix stays the right fix for these
+  reports.
+- **hint** survives that fix. booking-v3's form prints `MM/DD/YYYY` under its date field, so
+  people at day-first tenants type the month first, and the form reads their input day first.
+  The form needs the tenant's own order under its date field, as booking-v2 already does.
+- **one-day** is a third bug: the date lands a day early or late, and one report has the same
+  meeting on different days in Lisbon and Toronto. Look at how the date crosses time zones on
+  its way into the invite.
+- [Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on subject alone. The subjects
+  table shows why that put these problems in one ticket. A new decision record should replace
+  0001; this page does not edit it.
+
+<RenderStamp {signature} />
