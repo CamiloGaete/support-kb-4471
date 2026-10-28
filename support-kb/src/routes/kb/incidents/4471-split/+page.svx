@@ -15,25 +15,25 @@ signature: 'v1.eyJzdWIiOiIzMDIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhd
 
 The [#4471 page](/kb/incidents/4471) says one issue, one fix queued. Its own cause table, the
 desk's view below, says otherwise. Read report by report, against each reporter's tenant, the
-ticket holds two causes. Each one needs its own fix, and the parser fix queued for #4471 only
-reaches the first.
+ticket holds two causes. #4471 is the parser cause, and its queued fix only reaches that one. The
+form hint has no ticket of its own, so it gets one here.
 
 <Callout kind="warn">
 Not one issue. The queued parser fix leaves the form hint open.
 </Callout>
 
-## What #4471 held
+## What #4471 holds
 
-Each report is now merged into the ticket for its cause, so each table below is the desk's own cause
-table for that ticket.
+<CauseTable ticket={4471} />
 
-### [#6](https://github.com/CamiloGaete/support-kb-4471/issues/6): the shared parser
+## A ticket for each problem
 
-<CauseTable ticket={6} />
+| problem | what goes wrong | reports | ticket |
+| --- | --- | --- | --- |
+| `parser` | The shared parser reads a day-first date month first: day and month swap. | the `parser` row, its one-day footnote included | #4471 itself, fix queued |
+| `hint` | booking-v3's form prints `MM/DD/YYYY` under its date field; people type month first and the form reads it day first. | the `hint` row | [#2](https://github.com/CamiloGaete/support-kb-4471/issues/2) |
 
-### [#2](https://github.com/CamiloGaete/support-kb-4471/issues/2): the booking-v3 form hint
-
-<CauseTable ticket={2} />
+Parser keeps #4471. The hint ticket lists its report ids and its count.
 
 ## How each report was placed
 
@@ -56,8 +56,8 @@ swaps day and month, or gives no date to check against.
   people at day-first tenants type the month first, and the form reads their input day first.
   The form needs the tenant's own order under its date field, as booking-v2 already does.
 - The one-day reads in the **parser** footnote do not look like a swapped month: the date lands a
-  day early or late. They stay on the parser ticket, as the desk files them; check them again once
-  the parser fix ships.
+  day early or late. They stay on #4471, as the desk files them; check them again once the parser
+  fix ships.
 - [Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on subject alone, so reports with
   the same subject and different causes ended up in one ticket. A new decision record should
   replace 0001; this page does not edit it.
