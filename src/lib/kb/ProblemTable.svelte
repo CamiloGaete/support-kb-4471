@@ -1,9 +1,9 @@
 <script lang="ts">
   import reports from '#lib/data/reports-4471.json';
   import notes from '#lib/data/desk-notes.json';
-  import type { Report } from '#lib/kb/causes';
+  import { CAUSES, type Report } from '#lib/kb/causes';
   import { tenantOf } from '#lib/kb/locales';
-  import { PROBLEMS, WHAT_GOES_WRONG, splitTicket, type ProblemGroup } from '#lib/kb/problems';
+  import { WHAT_GOES_WRONG, splitTicket, type ProblemGroup } from '#lib/kb/problems';
 
   // `issues`: problem → the ticket filed for it.
   let { ticket, issues = {} }: { ticket: number; issues?: Partial<Record<ProblemGroup['problem'], string>> } = $props();
@@ -15,7 +15,8 @@
       .map(([k, v]) => `${k} ×${v}`)
       .join(' · ');
   const issueNumber = (url: string) => `#${url.split('/').pop()}`;
-  const columns = $derived(PROBLEMS.filter((p) => split.groups.some((g) => g.problem === p)));
+  const columns = $derived(CAUSES.filter((c) => split.groups.some((g) => g.problem === c)));
+  const oneDay = $derived(split.groups.find((g) => g.problem === 'one-day'));
 </script>
 
 <p class="sum">
@@ -35,7 +36,7 @@
           <code>{g.problem}</code>
           {#if g.problem !== 'unplaced'}<br /><span class="what">{WHAT_GOES_WRONG[g.problem]}</span>{/if}
         </td>
-        <td class="n">{g.reports.length}</td>
+        <td class="n">{g.reports.length}{#if g.problem === 'one-day'}*{/if}</td>
         <td class="list">{g.tenants.join(', ')}</td>
         <td class="list">{counts(g.channels)}</td>
         <td class="list">{counts(g.taggedAs)}</td>
@@ -48,7 +49,14 @@
   </tbody>
 </table>
 
-<h3>Subjects that hide more than one problem</h3>
+{#if oneDay}
+  <p class="note">
+    * The desk counts a report where it is filed. These {oneDay.reports.length} reports read as a one-day move are filed and
+    counted under {counts(oneDay.filedUnder)}, and counted again here as their own problem.
+  </p>
+{/if}
+
+<h3>Subjects that hide more than one cause</h3>
 
 <table>
   <thead>
@@ -58,13 +66,13 @@
     {#each split.sharedSubjects as s (s.subject)}
       <tr>
         <td>{s.subject}</td>
-        {#each columns as p (p)}<td class="n">{s.byProblem[p] ?? ''}</td>{/each}
+        {#each columns as c (c)}<td class="n">{s.byCause[c] ?? ''}</td>{/each}
       </tr>
     {/each}
   </tbody>
 </table>
 <p class="note">
-  {split.sharedSubjects.length} subject lines carry reports from more than one problem. Merging on subject alone put them in one ticket.
+  {split.sharedSubjects.length} subject lines carry reports from more than one cause. Merging on subject alone put them in one ticket.
 </p>
 
 <style>

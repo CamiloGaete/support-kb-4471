@@ -1,0 +1,1 @@
+export{n as component}from"../chunks/BBi_nMUZ.js";

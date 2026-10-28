@@ -33,16 +33,17 @@ Not one issue. The queued parser fix leaves the other problems below open.
 ## How each report was placed
 
 1. One report per id. The ticket system exports in overlapping pages, so some reports come twice.
-2. The desk's one-day notes go first. A report that says the date moved by one day did not get a
-   flipped month, whatever its tenant.
-3. Every other report goes by its tenant and the way it came in, as
+2. Every report goes by its tenant and the way it came in, as
    [`causes.ts`](https://github.com/CamiloGaete/support-kb-4471/blob/main/src/lib/kb/causes.ts) runs it: a form
    report from a day-first tenant on booking-v3 is `hint`, the rest is `parser`.
+3. The desk's one-day notes are a problem of their own. A report that says the date moved by one
+   day did not get a flipped month. As on the #4471 page, these stay counted where they are filed
+   and are counted again on their own row.
 4. Intake's tag is not used. It is a guess from the reporter's browser, and the table shows how
    often it names the other cause.
 
-Every body was read. Each report placed under `parser` or `hint` either swaps day and month, or
-gives no date to check against.
+Every body was read. Apart from the one-day reports, each report under `parser` or `hint`
+either swaps day and month, or gives no date to check against.
 
 ## What changes for the desk
 
@@ -55,7 +56,7 @@ gives no date to check against.
   meeting on different days in Lisbon and Toronto. Look at how the date crosses time zones on
   its way into the invite.
 - [Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on subject alone. The subjects
-  table shows why that put these problems in one ticket. A new decision record should replace
+  table shows why that put these causes in one ticket. A new decision record should replace
   0001; this page does not edit it.
 
 <RenderStamp {signature} />
