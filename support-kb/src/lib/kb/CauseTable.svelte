@@ -42,7 +42,7 @@
 
 {#each groups as g (g.cause)}
   {@const moved = readAs(g, notes.oneDayMove)}
-  {#if moved}
+  {#if moved && g.cause !== 'one-day'}
     <p class="note">{moved} reports read as a one-day move; filed under <code>{g.cause}</code> by tenant.</p>
   {/if}
 {/each}
