@@ -1,19 +1,15 @@
-// What #4471 holds, problem by problem. causes.ts sorts a report by its tenant; the desk's notes add
-// what it read in the body: a one-day move is not a flipped month. Like CauseTable, a noted report
-// stays counted where it is filed, and the one-day row counts it again on its own.
-import { CAUSES, groupByCause, uniqueById, type Cause, type Report, type Tenant } from '#lib/kb/causes';
+// What #4471 holds, problem by problem: one per cause, as causes.ts sorts a report by its tenant.
+// Like CauseTable, a report the desk read differently (desk-notes.json) stays counted where it is
+// filed, and is footnoted under it.
+import { groupByCause, readAs, uniqueById, type CauseGroup, type Cause, type Report, type Tenant } from '#lib/kb/causes';
 
-export type Problem = Cause | 'one-day';
-export const PROBLEMS: readonly Problem[] = [...CAUSES, 'one-day'];
-
-export const WHAT_GOES_WRONG: Record<Problem, string> = {
+export const WHAT_GOES_WRONG: Record<Cause, string> = {
   parser: 'The shared parser reads a day-first date month first: day and month swap.',
   hint: "booking-v3's form prints MM/DD/YYYY under the date field; people type month first and the form reads it day first.",
-  'one-day': 'The date lands one day early or late, not on a swapped month.',
 };
 
 export type ProblemGroup = {
-  problem: Problem | 'unplaced';
+  problem: Cause | 'unplaced';
   reports: Report[];
   tenants: string[];
   channels: Record<string, number>;
@@ -21,8 +17,8 @@ export type ProblemGroup = {
   taggedAs: Record<string, number>;
   firstSeen: string;
   lastSeen: string;
-  // For the one-day row: the cause each of its reports is filed and counted under.
-  filedUnder: Record<string, number>;
+  // Of these, reports the desk read as a one-day move instead of a swapped month.
+  readAsOneDay: number;
 };
 
 export type Split = {
@@ -46,22 +42,18 @@ export function splitTicket(
   const causeGroups = groupByCause(merged, tenantOf);
   const causeOfReport = new Map(causeGroups.flatMap((g) => g.reports.map((r) => [r.id, g.cause] as const)));
 
-  const group = (problem: ProblemGroup['problem'], rs: Report[]): ProblemGroup => {
-    const days = rs.map((r) => r.receivedAt.slice(0, 10)).sort();
-    return {
-      problem,
-      reports: rs,
-      tenants: [...new Set(rs.map((r) => r.tenant))].sort(),
-      channels: tally(rs, (r) => r.channel),
-      taggedAs: tally(rs, (r) => r.meta.intakeTag),
-      firstSeen: days[0],
-      lastSeen: days[days.length - 1],
-      filedUnder: problem === 'one-day' ? tally(rs, (r) => causeOfReport.get(r.id)!) : {},
-    };
-  };
+  const group = (g: CauseGroup): ProblemGroup => ({
+    problem: g.cause,
+    reports: g.reports,
+    tenants: [...new Set(g.reports.map((r) => r.tenant))].sort(),
+    channels: tally(g.reports, (r) => r.channel),
+    taggedAs: g.taggedAs,
+    firstSeen: g.firstSeen,
+    lastSeen: g.lastSeen,
+    readAsOneDay: readAs(g, oneDayMove),
+  });
 
-  const oneDay = merged.filter((r) => oneDayMove.includes(r.id));
-  const groups = [...causeGroups.map((g) => group(g.cause, g.reports)), ...(oneDay.length ? [group('one-day', oneDay)] : [])];
+  const groups = causeGroups.map(group);
 
   const bySubject = new Map<string, Partial<Record<Cause | 'unplaced', number>>>();
   for (const r of merged) {

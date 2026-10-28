@@ -20,14 +20,14 @@ otherwise. Read report by report, against each reporter's tenant, the ticket hol
 problems. Each one needs its own fix, and the parser fix queued for #4471 only reaches the first.
 
 <Callout kind="warn">
-Not one issue. The queued parser fix leaves the other problems below open.
+Not one issue. The queued parser fix leaves the form hint below open.
 </Callout>
 
 ## What the reports show
 
 <ProblemTable
   ticket={4471}
-  issues={{ parser: `${REPO}/issues/1`, hint: `${REPO}/issues/2`, 'one-day': `${REPO}/issues/3` }}
+  issues={{ parser: `${REPO}/issues/1`, hint: `${REPO}/issues/2` }}
 />
 
 ## How each report was placed
@@ -36,14 +36,13 @@ Not one issue. The queued parser fix leaves the other problems below open.
 2. Every report goes by its tenant and the way it came in, as
    [`causes.ts`](https://github.com/CamiloGaete/support-kb-4471/blob/main/src/lib/kb/causes.ts) runs it: a form
    report from a day-first tenant on booking-v3 is `hint`, the rest is `parser`.
-3. The desk's one-day notes are a problem of their own. A report that says the date moved by one
-   day did not get a flipped month. As on the #4471 page, these stay counted where they are filed
-   and are counted again on their own row.
+3. The desk's one-day notes stay where the report is filed, as on the #4471 page: counted there,
+   footnoted under it.
 4. Intake's tag is not used. It is a guess from the reporter's browser, and the table shows how
    often it names the other cause.
 
-Every body was read. Apart from the one-day reports, each report under `parser` or `hint`
-either swaps day and month, or gives no date to check against.
+Every body was read. Apart from the footnoted one-day reads, each report under `parser` or
+`hint` either swaps day and month, or gives no date to check against.
 
 ## What changes for the desk
 
@@ -52,9 +51,9 @@ either swaps day and month, or gives no date to check against.
 - **hint** survives that fix. booking-v3's form prints `MM/DD/YYYY` under its date field, so
   people at day-first tenants type the month first, and the form reads their input day first.
   The form needs the tenant's own order under its date field, as booking-v2 already does.
-- **one-day** is a third bug: the date lands a day early or late, and one report has the same
-  meeting on different days in Lisbon and Toronto. Look at how the date crosses time zones on
-  its way into the invite.
+- The one-day reads under **parser** do not look like a swapped month: the date lands a day
+  early or late, and one report has the same meeting on different days in Lisbon and Toronto.
+  The parser ticket lists them, so whoever ships the parser fix can check them after it lands.
 - [Decision 0001](/kb/decisions/0001-dedupe-by-subject) merges on subject alone. The subjects
   table shows why that put these causes in one ticket. A new decision record should replace
   0001; this page does not edit it.

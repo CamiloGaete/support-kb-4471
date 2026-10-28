@@ -16,7 +16,6 @@
       .join(' · ');
   const issueNumber = (url: string) => `#${url.split('/').pop()}`;
   const columns = $derived(CAUSES.filter((c) => split.groups.some((g) => g.problem === c)));
-  const oneDay = $derived(split.groups.find((g) => g.problem === 'one-day'));
 </script>
 
 <p class="sum">
@@ -36,7 +35,7 @@
           <code>{g.problem}</code>
           {#if g.problem !== 'unplaced'}<br /><span class="what">{WHAT_GOES_WRONG[g.problem]}</span>{/if}
         </td>
-        <td class="n">{g.reports.length}{#if g.problem === 'one-day'}*{/if}</td>
+        <td class="n">{g.reports.length}{#if g.readAsOneDay}*{/if}</td>
         <td class="list">{g.tenants.join(', ')}</td>
         <td class="list">{counts(g.channels)}</td>
         <td class="list">{counts(g.taggedAs)}</td>
@@ -49,12 +48,12 @@
   </tbody>
 </table>
 
-{#if oneDay}
+{#each split.groups.filter((g) => g.readAsOneDay) as g (g.problem)}
   <p class="note">
-    * The desk counts a report where it is filed. These {oneDay.reports.length} reports read as a one-day move are filed and
-    counted under {counts(oneDay.filedUnder)}, and counted again here as their own problem.
+    * {g.readAsOneDay} of the <code>{g.problem}</code> reports read as a one-day move, not a swapped month. They stay counted
+    here, where the desk files them, and the ticket names them.
   </p>
-{/if}
+{/each}
 
 <h3>Subjects that hide more than one cause</h3>
 
